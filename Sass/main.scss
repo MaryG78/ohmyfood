@@ -1,16 +1,17 @@
+@import "base/normalize";
+
 @import "utils/functions";
 @import "utils/mixins";
 @import "utils/placeholders";
 @import "utils/variables";
 
-@import "bases/normalize";
-@import "bases/typo";
+
+@import "base/typography";
 
 @import "layout/footer";
-@import "layout/grid";
 @import "layout/header";
 
 @import "components/buttons";
 
 @import "pages/home";
-@import "pages/pages1-4";
+@import "pages/menus";
