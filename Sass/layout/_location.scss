@@ -1,0 +1,16 @@
+.location {
+@include flexbox(row, center, center);
+
+padding: 1.2rem;
+background-color: $dark_grey;
+
+ i {
+    padding-right: 1.2rem;
+    font-size: 1.3rem;
+ }
+ p{
+    font-weight: bold;
+    font-size: 1.4rem;
+ }
+}
+

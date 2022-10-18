@@ -1,0 +1,14 @@
+@mixin flexbox ($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin shadow {
+    box-shadow: 0.25rem 0.25rem 6px rgb(0 0 0 / 10%);
+}
+
+@mixin padding {
+    padding: 3.8rem 1.5rem;
+}

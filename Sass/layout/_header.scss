@@ -1,0 +1,11 @@
+.header {
+    @include shadow;
+    padding: 1.4rem;
+    position: relative;
+}
+
+h1 {
+@include flexbox(row, center, center);
+}
+
+
