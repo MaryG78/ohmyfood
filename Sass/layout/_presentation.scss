@@ -21,7 +21,7 @@
     transition-duration: 0.25s;
     padding: 1.2rem 1.7rem;
     border-radius: 100px;
-    @include shadow;
+    @include shadow-btn;
     font-size: 1.3rem;
     color: white;
     font-weight: 500;

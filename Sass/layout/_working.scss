@@ -1,12 +1,50 @@
 .working {
-    @include padding;
+  @include padding;
 
-    li {
-        @include flexbox (row, center, space-evenly);
-        margin-bottom: 1rem;
-        background-color: $light_grey;
-        @include shadow;
-        padding: 2.3rem 0;
-        border-radius: 30px
-    }
+  h3 {
+    padding-bottom: 2.3rem;
+  }
+
+  &__list {
+    @include flexbox(column, stretch, normal);
+    gap: 16px;
+    counter-reset: compteListe
+  }
+
+  &__item {
+    @include flexbox(row, center, normal);
+    margin-bottom: 1rem;
+    background-color: $light_grey;
+    @include shadow-btn;
+    padding: 2rem 0 2rem 2.3rem;
+    border-radius: 30px;
+    @include text(black);
+
+  &:before {
+    @include flexbox (row, center, center);
+    content: "" counter(compteListe);
+    counter-increment: compteListe 1;
+    position: absolute;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: $purple;
+    color: white;
+    border-radius: 50%;
+    left: 9px;
+    font-weight: lighter;
+    font-size: 1rem;
+  }
+
+  }
+
+  i {
+    color: $icon_grey;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-right: 2rem;
+  }
+
+
+
+
 }

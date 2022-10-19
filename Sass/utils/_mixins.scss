@@ -1,14 +1,24 @@
-@mixin flexbox ($direction, $align, $justify) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
+@mixin flexbox($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
 }
 
 @mixin shadow {
-    box-shadow: 0.25rem 0.25rem 6px rgb(0 0 0 / 10%);
+  box-shadow: 0.25rem 0.25rem 6px rgb(0 0 0 / 10%);
+}
+
+@mixin shadow-btn {
+  box-shadow: 0.25rem 0.25rem 16px rgb(0 0 0 / 15%);
 }
 
 @mixin padding {
-    padding: 3.8rem 1.5rem;
+  padding: 4.5rem 1.5rem;
+}
+
+@mixin text($color) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color;
 }
