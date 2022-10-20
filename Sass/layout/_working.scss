@@ -1,6 +1,10 @@
 .working {
   @include padding;
 
+  @include media-lg {
+    @include padding-lg;
+  }
+
   h3 {
     padding-bottom: 2.3rem;
   }
@@ -8,7 +12,12 @@
   &__list {
     @include flexbox(column, stretch, normal);
     gap: 16px;
-    counter-reset: compteListe
+    counter-reset: compteListe;
+
+    @include media-md {
+      @include flexbox(row, normal, space-around);
+      gap: 30px;
+    }
   }
 
   &__item {
@@ -19,22 +28,29 @@
     padding: 2rem 0 2rem 2.3rem;
     border-radius: 30px;
     @include text(black);
+    position: relative;
 
-  &:before {
-    @include flexbox (row, center, center);
-    content: "" counter(compteListe);
-    counter-increment: compteListe 1;
-    position: absolute;
-    width: 1.8rem;
-    height: 1.8rem;
-    background-color: $purple;
-    color: white;
-    border-radius: 50%;
-    left: 9px;
-    font-weight: lighter;
-    font-size: 1rem;
-  }
+    @include media-md {
+      flex-basis: 33%;
+      justify-content: center;
+      @include text-md(black);
+      padding: 1rem 0.5rem 1rem 2rem;
+    }
 
+    &:before {
+      @include flexbox(row, center, center);
+      content: "" counter(compteListe);
+      counter-increment: compteListe 1;
+      position: absolute;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: $purple;
+      color: white;
+      border-radius: 50%;
+      left: -0.75rem;
+      font-weight: lighter;
+      font-size: 1rem;
+    }
   }
 
   i {
@@ -42,9 +58,9 @@
     font-size: 1.5rem;
     font-weight: bold;
     padding-right: 2rem;
+
+    @include media-md {
+      padding-right: 1.5rem;
+    }
   }
-
-
-
-
 }

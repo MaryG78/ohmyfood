@@ -4,6 +4,10 @@
   background-color: $light_grey;
   padding-bottom: 6.5rem;
 
+  @include media-lg {
+    padding-bottom:4rem;
+  }
+
   h2 {
     padding-bottom: 1.3rem;
   }
@@ -16,14 +20,6 @@
   }
 
   .btn {
-    background-image: linear-gradient(0deg, $purple, $pink);
-    cursor: pointer;
-    transition-duration: 0.25s;
-    padding: 1.2rem 1.7rem;
-    border-radius: 100px;
-    @include shadow-btn;
-    font-size: 1.3rem;
-    color: white;
-    font-weight: 500;
+    @include btn-gradient;
   }
 }

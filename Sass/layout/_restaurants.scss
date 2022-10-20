@@ -2,6 +2,10 @@
   background-color: $light_grey;
   @include padding;
 
+  @include media-lg {
+  @include padding-lg;
+}
+
   h3 {
     padding-bottom: 2.3rem;
   }
@@ -11,9 +15,20 @@
   @include flexbox(column, normal, normal);
   gap: 20px;
 
+  @include media-lg {
+  @include flexbox(row, normal, space-evenly);
+  flex-wrap: wrap;
+  gap: 35px;
+    
+  }
+
   .cards {
     border-radius: 20px;
     @include shadow;
+
+    @include media-lg{
+      flex-basis: 45%
+    }
 
     &__content {
       position: relative;

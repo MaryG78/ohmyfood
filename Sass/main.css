@@ -376,6 +376,11 @@ h1 {
   background-color: #f6f6f6;
   padding-bottom: 6.5rem;
 }
+@media screen and (min-width: 992px) {
+  .presentation {
+    padding-bottom: 4rem;
+  }
+}
 .presentation h2 {
   padding-bottom: 1.3rem;
 }
@@ -400,6 +405,11 @@ h1 {
 .working {
   padding: 4.5rem 1.5rem;
 }
+@media screen and (min-width: 992px) {
+  .working {
+    padding: 3.5rem 1.5rem;
+  }
+}
 .working h3 {
   padding-bottom: 2.3rem;
 }
@@ -410,6 +420,15 @@ h1 {
   justify-content: normal;
   gap: 16px;
   counter-reset: compteListe;
+}
+@media screen and (min-width: 768px) {
+  .working__list {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    justify-content: space-around;
+    gap: 30px;
+  }
 }
 .working__item {
   display: flex;
@@ -424,6 +443,17 @@ h1 {
   font-size: 1.5rem;
   font-weight: 700;
   color: black;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .working__item {
+    flex-basis: 33%;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: black;
+    padding: 1rem 0.5rem 1rem 2rem;
+  }
 }
 .working__item:before {
   display: flex;
@@ -438,7 +468,7 @@ h1 {
   background-color: #9356DC;
   color: white;
   border-radius: 50%;
-  left: 9px;
+  left: -0.75rem;
   font-weight: lighter;
   font-size: 1rem;
 }
@@ -448,10 +478,20 @@ h1 {
   font-weight: bold;
   padding-right: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .working i {
+    padding-right: 1.5rem;
+  }
+}
 
 .restaurants {
   background-color: #f6f6f6;
   padding: 4.5rem 1.5rem;
+}
+@media screen and (min-width: 992px) {
+  .restaurants {
+    padding: 3.5rem 1.5rem;
+  }
 }
 .restaurants h3 {
   padding-bottom: 2.3rem;
@@ -464,9 +504,24 @@ h1 {
   justify-content: normal;
   gap: 20px;
 }
+@media screen and (min-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 35px;
+  }
+}
 .container .cards {
   border-radius: 20px;
   box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 992px) {
+  .container .cards {
+    flex-basis: 45%;
+  }
 }
 .container .cards__content {
   position: relative;
