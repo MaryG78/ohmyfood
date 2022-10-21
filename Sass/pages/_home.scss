@@ -21,10 +21,6 @@
   text-align: center;
   background-color: $light_grey;
 
-  @include media-md {
-    background-color: white;
-  }
-
   h2 {
     padding-bottom: 0.8rem;
   }
@@ -38,6 +34,15 @@
 
   .btn {
     @include btn-gradient;
+
+    &:hover {
+      background: linear-gradient(
+        0deg,
+        lighten($purple, 5%),
+        lighten($pink, 5%)
+      );
+      box-shadow: 0.25rem 0.25rem 16px rgb(0 0 0 / 30%);
+    }
   }
 }
 
