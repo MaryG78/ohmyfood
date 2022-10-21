@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Shrikhand&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap);
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -329,7 +329,8 @@ body {
 
 h1 {
   font-family: "Shrikhand", cursive;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -337,12 +338,12 @@ h2,
 h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .header {
   box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.1);
-  padding: 1.4rem;
+  padding: 1.3rem 0 0.7rem 0;
   position: relative;
 }
 
@@ -353,61 +354,99 @@ h1 {
   justify-content: center;
 }
 
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 1.5rem;
+}
+.footer__logo {
+  padding-bottom: 1.5rem;
+  font-family: "Shrikhand", cursive;
+  font-size: 1.1rem;
+}
+@media screen and (min-width: 900px) {
+  .footer__logo {
+    padding-left: 1.5rem;
+  }
+}
+.footer__list li {
+  padding-bottom: 0.5rem;
+}
+.footer__list a {
+  color: white;
+}
+.footer__list a i {
+  font-size: 0.8rem;
+  width: 20px;
+}
+@media screen and (min-width: 900px) {
+  .footer__list a {
+    padding-left: 1.5rem;
+  }
+}
+
 .location {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem;
+  padding: 1rem;
   background-color: #eaeaea;
+  color: #353535;
 }
 .location i {
   padding-right: 1.2rem;
-  font-size: 1.3rem;
+  align-self: center;
 }
 .location p {
   font-weight: bold;
-  font-size: 1.4rem;
 }
 
 .presentation {
-  padding-top: 3rem;
+  padding: 2.5rem 1.5rem 4.5rem 1.5rem;
   text-align: center;
   background-color: #f6f6f6;
-  padding-bottom: 6.5rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 900px) {
   .presentation {
-    padding-bottom: 4rem;
+    background-color: white;
   }
 }
 .presentation h2 {
-  padding-bottom: 1.3rem;
+  padding-bottom: 0.8rem;
 }
 .presentation p {
-  font-size: 1.5rem;
-  padding-bottom: 3rem;
-  color: #818181;
+  font-size: 1.2rem;
+  padding-bottom: 2rem;
+  font-weight: 300;
   margin-bottom: 0.7rem;
 }
 .presentation .btn {
   background-image: linear-gradient(0deg, #9356DC, #FF79DA);
   cursor: pointer;
   transition-duration: 0.25s;
-  padding: 1.2rem 1.7rem;
+  padding: 1rem 1.5rem;
   border-radius: 100px;
-  box-shadow: 0.25rem 0.25rem 16px rgba(0, 0, 0, 0.15);
-  font-size: 1.3rem;
+  box-shadow: 0.25rem 0.25rem 16px rgba(0, 0, 0, 0.2);
   color: white;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .working {
-  padding: 4.5rem 1.5rem;
+  padding: 2.5rem 1.5rem 3.5rem 1.5rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 720px) {
   .working {
-    padding: 3.5rem 1.5rem;
+    padding: 3rem 2.5rem 2rem 2.5rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 900px) {
+  .working {
+    padding: 1.5rem 2.5rem 3rem 2.5rem;
+    max-width: 1200px;
+    margin: auto;
   }
 }
 .working h3 {
@@ -421,7 +460,7 @@ h1 {
   gap: 16px;
   counter-reset: compteListe;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .working__list {
     display: flex;
     flex-direction: row;
@@ -437,22 +476,22 @@ h1 {
   justify-content: normal;
   margin-bottom: 1rem;
   background-color: #f6f6f6;
-  box-shadow: 0.25rem 0.25rem 16px rgba(0, 0, 0, 0.15);
-  padding: 2rem 0 2rem 2.3rem;
-  border-radius: 30px;
-  font-size: 1.5rem;
+  box-shadow: 0.25rem 0.25rem 16px rgba(0, 0, 0, 0.2);
+  padding: 1.2rem 0 1.2rem 0;
+  border-radius: 17px;
+  font-size: 1rem;
   font-weight: 700;
   color: black;
-  position: relative;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .working__item {
     flex-basis: 33%;
     justify-content: center;
     font-size: 1.2rem;
     font-weight: 700;
     color: black;
-    padding: 1rem 0.5rem 1rem 2rem;
+    padding: 1rem 0.5rem 1rem 1.5rem;
+    font-size: 1rem;
   }
 }
 .working__item:before {
@@ -462,63 +501,85 @@ h1 {
   justify-content: center;
   content: "" counter(compteListe);
   counter-increment: compteListe 1;
-  position: absolute;
   width: 1.8rem;
   height: 1.8rem;
   background-color: #9356DC;
   color: white;
   border-radius: 50%;
-  left: -0.75rem;
   font-weight: lighter;
   font-size: 1rem;
+  margin-left: -0.9rem;
 }
 .working i {
   color: #7e7e7e;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  padding-right: 2rem;
+  padding: 0 1rem;
 }
-@media screen and (min-width: 768px) {
+.working i:hover {
+  color: #9356DC;
+}
+@media screen and (min-width: 900px) {
   .working i {
-    padding-right: 1.5rem;
+    padding-right: 1.2rem;
   }
 }
 
 .restaurants {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: space-between;
   background-color: #f6f6f6;
-  padding: 4.5rem 1.5rem;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 720px) {
   .restaurants {
-    padding: 3.5rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background-color: white;
   }
 }
 .restaurants h3 {
-  padding-bottom: 2.3rem;
+  flex-basis: 100%;
+}
+@media screen and (min-width: 720px) {
+  .restaurants h3 {
+    padding: 2rem 0 0 1.5rem;
+  }
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: normal;
-  justify-content: normal;
+  justify-content: space-between;
+  background-color: #f6f6f6;
   gap: 20px;
+  margin-bottom: 1.5rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 720px) {
   .container {
     display: flex;
     flex-direction: row;
     align-items: normal;
-    justify-content: space-evenly;
+    justify-content: center;
+    background-color: #f6f6f6;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: 38px;
+    border-radius: 20px;
+    padding-bottom: 2.5rem;
+    box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.1);
   }
 }
 .container .cards {
   border-radius: 20px;
   box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 720px) {
   .container .cards {
     flex-basis: 45%;
   }
@@ -527,57 +588,54 @@ h1 {
   position: relative;
 }
 .container .cards__img {
-  height: 16rem;
+  height: 12rem;
   width: 100%;
   border-radius: 6% 6% 0 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .container .cards__badge {
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   background-color: #99E2D0;
   color: #038868;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 5%;
   position: absolute;
   top: 1.2rem;
   right: 0.75rem;
 }
 .container .cards__text {
-  position: relative;
-  background-color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  justify-content: space-between;
+  padding: 0.5rem 0 1rem 0.8rem;
   color: black;
-  padding: 1rem;
 }
-.container .cards__text .cards__icon {
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
+.container .cards__legend {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: normal;
+  flex-basis: 65%;
 }
-.container .cards__text p {
-  padding-top: 0.7rem;
-  font-weight: 400;
-}
-
-.footer {
-  background-color: #353535;
-  color: white;
-  padding: 1.5rem;
-}
-.footer__logo {
-  padding-bottom: 1.5rem;
-  font-family: "Shrikhand", cursive;
+.container .cards__legend h4 {
   font-size: 1.1rem;
+  font-weight: 700;
 }
-.footer__list {
-  color: white;
+.container .cards__legend p {
+  padding-top: 0.3rem;
+  font-weight: 300;
 }
-.footer__list li {
-  padding-bottom: 0.5rem;
+.container .cards__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 32%;
+  font-size: 1.5rem;
 }
-.footer__list li i {
-  padding-right: 0.4rem;
+.container .cards__icon .full {
+  display: none;
 }/*# sourceMappingURL=main.css.map */

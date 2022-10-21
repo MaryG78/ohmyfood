@@ -1,5 +1,5 @@
 @import "base/normalize";
-@import "base/reset";
+@import "base/bases";
 
 @import "utils/functions";
 @import "utils/mixins";
@@ -10,10 +10,6 @@
 @import "base/typography";
 
 @import "layout/header";
-@import "layout/location";
-@import "layout/presentation";
-@import "layout/working";
-@import "layout/restaurants";
 @import "layout/footer";
 
 

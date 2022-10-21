@@ -1,0 +1,222 @@
+// Location part //
+.location {
+  @include flexbox(row, center, center);
+
+  padding: 1rem;
+  background-color: $dark_grey;
+  color: $footer_grey;
+
+  i {
+    padding-right: 1.2rem;
+    align-self: center;
+  }
+  p {
+    font-weight: bold;
+  }
+}
+
+// Description part //
+.presentation {
+  padding: 2.5rem 1.5rem 4.5rem 1.5rem;
+  text-align: center;
+  background-color: $light_grey;
+
+  @include media-md {
+    background-color: white;
+  }
+
+  h2 {
+    padding-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+    font-weight: 300;
+    margin-bottom: 0.7rem;
+  }
+
+  .btn {
+    @include btn-gradient;
+  }
+}
+
+// Working part //
+.working {
+  padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+
+  @include media-sm {
+    padding: 3rem 2.5rem 2rem 2.5rem;
+    @include responsive-margin;
+  }
+
+  @include media-md {
+    padding: 1.5rem 2.5rem 3rem 2.5rem;
+    @include responsive-margin;
+  }
+
+  h3 {
+    padding-bottom: 2.3rem;
+  }
+
+  &__list {
+    @include flexbox(column, stretch, normal);
+    gap: 16px;
+    counter-reset: compteListe;
+
+    @include media-md {
+      @include flexbox(row, normal, space-around);
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    @include flexbox(row, center, normal);
+    margin-bottom: 1rem;
+    background-color: $light_grey;
+    @include shadow-btn;
+    padding: 1.2rem 0 1.2rem 0;
+    border-radius: 17px;
+    @include text(black);
+
+    @include media-md {
+      flex-basis: 33%;
+      justify-content: center;
+      @include text-md(black);
+      padding: 1rem 0.5rem 1rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    &:before {
+      @include flexbox(row, center, center);
+      content: "" counter(compteListe);
+      counter-increment: compteListe 1;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: $purple;
+      color: white;
+      border-radius: 50%;
+      font-weight: lighter;
+      font-size: 1rem;
+      margin-left: -0.9rem;
+    }
+  }
+
+  i {
+    color: $icon_grey;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 1rem;
+
+    &:hover {
+      color: $purple;
+    }
+
+    @include media-md {
+      padding-right: 1.2rem;
+    }
+  }
+}
+
+// Restaurants part //
+.restaurants {
+  @include flexbox(column, normal, space-between);
+  background-color: $light_grey;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+
+  @include media-sm {
+    @include responsive-margin;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background-color: white;
+  }
+
+  h3 {
+    flex-basis: 100%;
+
+    @include media-sm {
+      padding: 2rem 0 0 1.5rem;
+    }
+  }
+}
+
+.container {
+  @include flexbox(column, normal, space-between);
+  background-color: $light_grey;
+  gap: 20px;
+  margin-bottom: 1.5rem;
+
+  @include media-sm {
+    @include flexbox(row, normal, center);
+    background-color: $light_grey;
+    flex-wrap: wrap;
+    gap: 38px;
+    border-radius: 20px;
+    padding-bottom: 2.5rem;
+    @include shadow;
+  }
+
+  .cards {
+    border-radius: 20px;
+    @include shadow;
+    background-color: white;
+
+    @include media-sm {
+      flex-basis: 45%;
+    }
+
+    &__content {
+      position: relative;
+    }
+
+    &__img {
+      height: 12rem;
+      width: 100%;
+      border-radius: 6% 6% 0 0;
+      object-fit: cover;
+    }
+
+    &__badge {
+      font-size: 0.9rem;
+      background-color: $blue;
+      color: $green;
+      font-weight: bold;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5%;
+      position: absolute;
+      top: 1.2rem;
+      right: 0.75rem;
+    }
+  }
+
+  .cards__text {
+    @include flexbox(row, normal, space-between);
+    padding: 0.5rem 0 1rem 0.8rem;
+    color: black;
+  }
+
+  .cards__legend {
+    @include flexbox(column, normal, normal);
+    flex-basis: 65%;
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    p {
+      padding-top: 0.3rem;
+      font-weight: 300;
+    }
+  }
+
+  .cards__icon {
+    @include flexbox(column, center, center);
+    flex-basis: 32%;
+    font-size: 1.5rem;
+
+    .full {
+      display: none;
+    }
+  }
+}
