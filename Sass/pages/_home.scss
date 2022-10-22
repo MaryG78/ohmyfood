@@ -69,20 +69,21 @@
     counter-reset: compteListe;
 
     @include media-md {
-      @include flexbox(row, normal, space-around);
+      @include flexbox(row, normal, space-between);
       gap: 30px;
     }
   }
 
   &__item {
-    @include flexbox(row, center, normal);
+    @include flexbox(row, center, start);
     margin-bottom: 1rem;
     background-color: $light_grey;
     @include shadow-btn;
-    padding: 1.2rem 2rem 1.2rem 2rem;
+    padding: 1.5rem 2rem 1.5rem 2rem;
     border-radius: 18px;
     @include text(black);
     position: relative;
+    
 
     &:hover {
       background-color: #f5e9f4;
@@ -133,7 +134,7 @@
 .restaurants {
   @include flexbox(column, normal, space-between);
   background-color: $light_grey;
-  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+  padding: 3rem 1.5rem 2.5rem 1.5rem;
 
   @include media-sm {
     padding-left: 3.5rem;
@@ -177,10 +178,14 @@
     }
 
     &__img {
-      height: 12rem;
+      height: 180px;
       width: 100%;
       border-radius: 25px 25px 0 0;
       object-fit: cover;
+
+      @include media-md{
+        height:220px;
+      }
     }
 
     &__badge {
@@ -219,7 +224,7 @@
 
   .cards__icon {
     @include flexbox(column, center, center);
-    flex-basis: 17%;
+    flex-basis: 20%;
     font-size: 1.5rem;
 
     .full {
