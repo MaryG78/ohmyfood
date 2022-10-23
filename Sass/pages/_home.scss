@@ -57,6 +57,8 @@
   @include media-md {
     padding-left: 4.5rem;
     padding-right: 4.5rem;
+    margin-left: 135px;
+    margin-right:157px;
   }
 
   h3 {
@@ -79,11 +81,10 @@
     margin-bottom: 1rem;
     background-color: $light_grey;
     @include shadow-btn;
-    padding: 1.5rem 2rem 1.5rem 2rem;
+    padding: 1.5rem 1rem 1.5rem 2rem;
     border-radius: 18px;
     @include text(black);
     position: relative;
-    
 
     &:hover {
       background-color: #f5e9f4;
@@ -94,7 +95,6 @@
 
     @include media-md {
       flex-basis: 33%;
-      justify-content: center;
       @include text-md(black);
       font-size: 1rem;
       max-width: 410px;
@@ -157,20 +157,24 @@
   margin-bottom: 1.5rem;
 
   @include media-sm {
-    @include flexbox(row, center, space-between);
+    @include flexbox(row, center, start);
     background-color: $light_grey;
     flex-wrap: wrap;
-    gap: 28px;
     padding-bottom: 2.5rem;
   }
 
+  @include media-md {
+   padding: 1.5rem 8rem 2.5rem 8rem;
+  }
+
   .cards {
-    border-radius: 25px;
+    border-radius: 20px;
     @include shadow;
     background-color: white;
 
     @include media-sm {
-      flex-basis: 45%;
+      flex-basis: 48%;
+      flex-shrink: 1;
     }
 
     &__content {
@@ -180,11 +184,11 @@
     &__img {
       height: 180px;
       width: 100%;
-      border-radius: 25px 25px 0 0;
+      border-radius: 20px 20px 0 0;
       object-fit: cover;
 
-      @include media-md{
-        height:220px;
+      @include media-md {
+        height: 220px;
       }
     }
 
