@@ -1,0 +1,146 @@
+.header--return {
+  @include flexbox(row, center, center);
+  position: relative;
+
+  i {
+    font-size: 20px;
+    position: absolute;
+    top: 45%;
+    left: 30px;
+    color: black;
+  }
+}
+
+.menu {
+  @include flexbox(column, normal, center);
+  position: relative;
+  background-color: $light-grey;
+
+  &__image {
+    height: 260px;
+    object-fit: cover;
+
+    @include media-sm {
+      height: 350px;
+    }
+  }
+
+  &__container {
+    @include flexbox(column, normal, normal);
+    background-color: $light-grey;
+    position: relative;
+    border-radius: 40px 40px 0 0;
+    top: -43px;
+    padding: 2rem 1rem 0rem 1rem;
+
+    @include media-sm {
+      @include flexbox(row, normal, space-around);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__title {
+    @include flexbox(row, normal, normal);
+
+    @include media-sm {
+      flex-basis: 100%;
+    }
+
+    h2 {
+      font-family: "Shrikhand", cursive;
+      font-size: 1.7rem;
+      font-weight: 500;
+      padding-bottom: 2.7rem;
+      flex: 1;
+    }
+
+    i {
+      padding-right: 2rem;
+      font-size: x-large;
+    }
+
+    .full {
+      display: none;
+    }
+  }
+
+  &__cards {
+    @include flexbox(column, normal, normal);
+    padding-bottom: 2.5rem;
+
+    @include media-sm {
+      flex-basis: 30%;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 1rem;
+      padding-bottom: 1.5rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 40px;
+        height: 3.5px;
+        background-color: $blue;
+        position: absolute;
+        top: 23px;
+        left: 0;
+      }
+    }
+  }
+}
+
+.cards__details {
+  @include flexbox(column, normal, normal);
+  gap: 14px;
+}
+
+.items {
+  @include flexbox(row, center, normal);
+  background-color: white;
+  border-radius: 15px;
+  padding: 0.8rem;
+  @include shadow;
+
+  &__name {
+    @include flexbox(column, normal, center);
+    flex: 1;
+
+    h4 {
+      padding-bottom: 0.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+  }
+
+  &__price {
+    @include flexbox(row, flex-end, flex-end);
+    transform: translateY(11px);
+    font-weight: 700;
+  }
+
+  &__check {
+    display: none;
+  }
+}
+
+.btn__order {
+  @include flexbox(row, center, center);
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+
+  @include media-sm {
+    flex-basis: 100%;
+  }
+
+  .btn {
+    @include btn-gradient;
+    padding: 1rem 3.2rem;
+  }
+}
