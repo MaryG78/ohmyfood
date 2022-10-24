@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <title>Restaurant "Restaurant A la française" - ohmyfood!</title>
   <meta name="description"
     content="Commander votre repas en ligne sur ohmyfood vous permettra de composer votre propre menu et réduire votre temps d’attente dans les restaurants. Plus de perte de temps à consulter la carte! ">
@@ -18,112 +18,114 @@
   </header>
 
   <main class="menu">
-    <img class="menu__image" src="assets/images/a-la-française.jpg"
+    <img class="menu__image" src="/assets/images/a-la-francaise.jpg"
       alt="Restaurant A la française, assiette d'oeufs mollets sur toast aux jeunes pousses">
-    <section>
-      <div>
-        <h2 class="menu__title">A la française</h2>
+    <section class="menu__container">
+      <div class="menu__title">
+        <h2>À la française</h2>
         <div>
-          <i class="fa-regular fa-heart"></i>
-          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-heart empty"></i>
+          <i class="fa-solid fa-heart full"></i>
         </div>
       </div>
-      <section>
+      <section class="menu__cards">
         <h3>Entrées</h3>
-        <ul>
-          <li>
-            <div>
+        <ul class="cards__details">
+          <li class="items">
+            <div class="items__name">
               <h4>Tartare de poulpe acidulé</h4>
               <p>Aux zestes d'orange</p>
             </div>
-            <div>25€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">25€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
-          <li>
-            <div>
+          <li class="items">
+            <div class="items__name">
               <h4>Velouté de légumes d'antan</h4>
               <p>Carotte, panais, topinambour</p>
             </div>
-            <div>35€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">35€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
-          <li>
-            <div>
+          <li class="items">
+            <div class="items__name">
               <h4>Soupe à l'oignon</h4>
               <p>Revisitée</p>
             </div>
-            <div>20€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">20€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
         </ul>
       </section>
-      <section>
+      <section class="menu__cards">
         <h3>Plats</h3>
-        <ul>
-          <li>
-            <div>
+        <ul class="cards__details">
+          <li class="items">
+            <div class="items__name">
               <h4>Coquilles Saint-Jacques</h4>
               <p>Accompagnées d'une purée de panais</p>
             </div>
-            <div>40€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">40€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
-          <li>
-            <div>
+          <li class="items">
+            <div class="items__name">
               <h4>Magret de canard</h4>
               <p>Et parmentier de pommes de terre</p>
             </div>
-            <div>35€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">35€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
-          <li>
-            <div>
+          <li class="items">
+            <div class="items__name">
               <h4>Pigeonneau d’Ille-et-Vilaine</h4>
               <p>Sur son lit de gnocchis aux légumes</p>
             </div>
-            <div>44€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">44€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
         </ul>
       </section>
-      <section>
+      <section class="menu__cards">
         <h3>Desserts</h3>
-        <ul>
-          <li>
-            <div>
+        <ul class="cards__details">
+          <li class="items">
+            <div class="items__name">
               <h4>Pétales de violettes glacés</h4>
               <p>Et purée de noisettes</p>
             </div>
-            <div>18€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">18€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
-          <li>
-            <div>
+          <li class="items">
+            <div class="items__name">
               <h4>Fondant au chocolat</h4>
               <p>Revisité</p>
             </div>
-            <div>22€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">22€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
-          <li>
-            <div>
+          <li class="items">
+            <div class="items__name">
               <h4>Millefeuille croustillant</h4>
               <p>Myrtilles et pâte d’amande</p>
             </div>
-            <div>23€</div>
-            <div><i class="fa-regular fa-circle-check"></i></div>
+            <div class="items__price">23€</div>
+            <div class="items__check"><i class="fa-regular fa-circle-check"></i></div>
           </li>
         </ul>
       </section>
+      <div class="btn__order">
       <a href="#" class="btn">Commander</a>
+      </div>
     </section>
 
   </main>
   <footer class="footer">
-    <span class="footer__logo">ohmyfood</span>
+    <p class="footer__logo">ohmyfood</p>
     <ul class="footer__list">
       <li>
-        <a href="#">
+        <a href="#" class="footer__link">
           <i class="fa-solid fa-utensils"></i>
           Proposer un restaurant
         </a>
@@ -142,12 +144,9 @@
       </li>
     </ul>
   </footer>
-
+  
   <!--FontAwesome-->
-  <script>
-    src = "https://kit.fontawesome.com/871b07eadb.js";
-    crossorigin = "anonymous";
-  </script>
+  <script src="https://kit.fontawesome.com/871b07eadb.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
