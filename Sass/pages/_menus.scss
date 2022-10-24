@@ -14,7 +14,10 @@
 .menu {
   @include flexbox(column, normal, center);
   position: relative;
-  background-color: $light-grey;
+
+  @include media-sm {
+    background-color: white;
+  }
 
   &__image {
     height: 260px;
@@ -22,6 +25,7 @@
 
     @include media-sm {
       height: 350px;
+      background-color: white;
     }
   }
 
@@ -30,12 +34,18 @@
     background-color: $light-grey;
     position: relative;
     border-radius: 40px 40px 0 0;
-    top: -43px;
+    z-index: 1;
     padding: 2rem 1rem 0rem 1rem;
+    margin-top: -40px;
 
     @include media-sm {
-      @include flexbox(row, normal, space-around);
-      flex-wrap: wrap;
+      margin: -100px 180px 0 180px;
+    }
+
+    @include media-md {
+      @include responsive-margin;
+      min-width: 1100px;
+      margin-top: -100px;
     }
   }
 
@@ -50,12 +60,12 @@
       font-family: "Shrikhand", cursive;
       font-size: 1.7rem;
       font-weight: 500;
-      padding-bottom: 2.7rem;
+      padding-bottom: 2.2rem;
       flex: 1;
     }
 
     i {
-      padding-right: 2rem;
+      padding-right: 1.2rem;
       font-size: x-large;
     }
 
@@ -101,21 +111,29 @@
   @include flexbox(row, center, normal);
   background-color: white;
   border-radius: 15px;
-  padding: 0.8rem;
+  padding: 0.8rem 1.2rem 0.5rem 0.8rem;
   @include shadow;
 
   &__name {
     @include flexbox(column, normal, center);
     flex: 1;
+    overflow: hidden;
 
     h4 {
-      padding-bottom: 0.2rem;
+      padding-bottom: 0.4rem;
       font-size: 1.1rem;
       font-weight: 600;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
+
     p {
       font-size: 0.95rem;
       font-weight: 300;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 
@@ -123,6 +141,7 @@
     @include flexbox(row, flex-end, flex-end);
     transform: translateY(11px);
     font-weight: 700;
+    padding-left: 1.2rem;
   }
 
   &__check {
@@ -132,8 +151,8 @@
 
 .btn__order {
   @include flexbox(row, center, center);
-  padding-bottom: 2rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
 
   @include media-sm {
     flex-basis: 100%;
