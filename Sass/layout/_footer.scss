@@ -12,9 +12,6 @@
     padding-bottom: 1.5rem;
     font-family: "Shrikhand", cursive;
     font-size: 1.1rem;
-    @include media-md {
-      padding-left: 1.5rem;
-    }
   }
 
   &__list {
