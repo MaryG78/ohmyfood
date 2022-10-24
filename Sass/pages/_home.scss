@@ -130,14 +130,12 @@
   background-color: $light_grey;
   padding: 3rem 1.5rem 2.5rem 1.5rem;
 
-
-
   h3 {
     flex-basis: 100%;
   }
 }
 
-.container {
+.restaurants__container {
   @include flexbox(column, normal, space-between);
   gap: 20px;
   margin-bottom: 1.5rem;

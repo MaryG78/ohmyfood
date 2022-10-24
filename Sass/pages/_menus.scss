@@ -14,7 +14,10 @@
 .menu {
   @include flexbox(column, normal, center);
   position: relative;
-  background-color: $light-grey;
+
+  @include media-sm {
+    background-color: white;
+  }
 
   &__image {
     height: 260px;
@@ -22,6 +25,7 @@
 
     @include media-sm {
       height: 350px;
+      background-color: white;
     }
   }
 
@@ -30,12 +34,16 @@
     background-color: $light-grey;
     position: relative;
     border-radius: 40px 40px 0 0;
-    top: -43px;
+    z-index: 1;
     padding: 2rem 1rem 0rem 1rem;
+    margin-top: -40px;
 
     @include media-sm {
-      @include flexbox(row, normal, space-around);
-      flex-wrap: wrap;
+      margin: -100px 180px 0 180px;
+    }
+
+     @include media-md {
+      margin: -100px 260px 0 260px;
     }
   }
 
@@ -50,12 +58,12 @@
       font-family: "Shrikhand", cursive;
       font-size: 1.7rem;
       font-weight: 500;
-      padding-bottom: 2.7rem;
+      padding-bottom: 2.2rem;
       flex: 1;
     }
 
     i {
-      padding-right: 2rem;
+      padding-right: 1.2rem;
       font-size: x-large;
     }
 
@@ -101,7 +109,7 @@
   @include flexbox(row, center, normal);
   background-color: white;
   border-radius: 15px;
-  padding: 0.8rem;
+  padding: 0.8rem 1.2rem 0.5rem 0.8rem;
   @include shadow;
 
   &__name {
@@ -109,7 +117,7 @@
     flex: 1;
 
     h4 {
-      padding-bottom: 0.2rem;
+      padding-bottom: 0.4rem;
       font-size: 1.1rem;
       font-weight: 600;
     }
@@ -132,8 +140,8 @@
 
 .btn__order {
   @include flexbox(row, center, center);
-  padding-bottom: 2rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
 
   @include media-sm {
     flex-basis: 100%;
