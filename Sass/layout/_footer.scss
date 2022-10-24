@@ -3,13 +3,15 @@
   color: white;
   padding: 1.5rem;
 
+  @include media-md {
+    @include flexbox(column, center, normal);
+    text-align: center;
+  }
+
   &__logo {
     padding-bottom: 1.5rem;
     font-family: "Shrikhand", cursive;
     font-size: 1.1rem;
-    @include media-md {
-      padding-left: 1.5rem;
-    }
   }
 
   &__list {
@@ -21,10 +23,6 @@
       i {
         font-size: 0.8rem;
         width: 20px;
-      }
-
-      @include media-md {
-        padding-left: 1.5rem;
       }
     }
   }
