@@ -161,5 +161,9 @@
   .btn {
     @include btn-gradient;
     padding: 1rem 3.2rem;
+  
+  &.btn:hover {
+    @include btn-hover;
+  }
   }
 }
