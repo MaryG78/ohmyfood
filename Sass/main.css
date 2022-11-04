@@ -676,8 +676,10 @@ h1 {
   position: absolute;
   inset: 0;
   /*ANIMATION */
-  -webkit-animation: spin-out 3.5s linear 0s forwards;
-  animation: spin-out 3.5s linear 0s forwards;
+  -webkit-animation: spin-out 1s linear forwards;
+  animation: spin-out 1.5s linear forwards;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
 }
 @-webkit-keyframes spin-out {
   0% {
@@ -712,8 +714,8 @@ h1 {
   opacity: 0.8;
   z-index: 2;
   /*ANIMATION */
-  animation: slit-out 3.5s ease-in both;
-  -webkit-animation: slit-out 3.5s ease-in both;
+  animation: slit-out 3s ease-in both;
+  -webkit-animation: slit-out 3s ease-in both;
 }
 @-webkit-keyframes slit-out {
   0% {
@@ -966,24 +968,25 @@ h1 {
   justify-content: normal;
   background-color: white;
   border-radius: 15px;
-  padding: 0.8rem 1.2rem 0.5rem 0.8rem;
+  padding-left: 0.8rem;
   box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.1);
   -webkit-animation: lazy-loading 1s;
           animation: lazy-loading 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+  overflow: hidden;
 }
 .items:nth-child(1) {
-  -webkit-animation-delay: 100ms;
-          animation-delay: 100ms;
-}
-.items:nth-child(2) {
   -webkit-animation-delay: 200ms;
           animation-delay: 200ms;
 }
+.items:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
 .items:nth-child(3) {
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
 }
 @-webkit-keyframes lazy-loading {
   0% {
@@ -1001,6 +1004,29 @@ h1 {
     transform: scale(1);
   }
 }
+.items:hover .items__check {
+  margin-right: 0;
+}
+.items:hover i {
+  -webkit-animation: spin-check 1s;
+          animation: spin-check 1s;
+}
+@-webkit-keyframes spin-check {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-check {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .items__name {
   display: flex;
   flex-direction: column;
@@ -1016,6 +1042,7 @@ h1 {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-top: 0.8rem;
 }
 .items__name p {
   font-size: 0.95rem;
@@ -1023,6 +1050,7 @@ h1 {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-bottom: 0.5rem;
 }
 .items__price {
   display: flex;
@@ -1032,9 +1060,23 @@ h1 {
   transform: translateY(11px);
   font-weight: 700;
   padding-left: 1.2rem;
+  padding-right: 1rem;
 }
 .items__check {
-  display: none;
+  background-color: #99e2d0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  width: 3.5rem;
+  border-radius: 0 15px 15px 0;
+  margin-right: -4rem;
+  transition: all 0.4s ease-in-out;
+}
+.items__check i {
+  color: white;
+  font-weight: 900;
 }
 
 .btn__order {
