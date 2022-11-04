@@ -129,13 +129,29 @@
     }
     100% {
       transform: scale(1);
-    } 
+    }
   }
 
-  &:hover .items__check {
+  &:hover {
+    .items__check {
       margin-right: 0;
     }
 
+    i {
+      animation: spin-check 1s;
+   
+
+    }
+
+    @keyframes spin-check {
+      0% {
+        transform: rotate(90deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
 
   &__name {
     @include flexbox(column, normal, center);
@@ -172,12 +188,20 @@
 
   &__check {
     background-color: $check;
-    @include flexbox (row, center, center);
-    height:65px;
+    @include flexbox(row, center, center);
+    height: 65px;
     width: 3.5rem;
     border-radius: 0 15px 15px 0;
     margin-right: -4rem;
+    transition: all 0.4s ease-in-out;
+
+     i {
+    color: white;
+    font-weight: 900;
   }
+  }
+
+ 
 }
 
 .btn__order {
