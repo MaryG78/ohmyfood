@@ -111,10 +111,11 @@
   @include flexbox(row, center, normal);
   background-color: white;
   border-radius: 15px;
-  padding: 0.8rem 1.2rem 0.5rem 0.8rem;
+  padding-left: 0.8rem;
   @include shadow;
   animation: lazy-loading 1s;
   animation-fill-mode: both;
+  overflow: hidden;
 
   @for $i from 1 through 3 {
     &:nth-child(#{$i}) {
@@ -131,6 +132,27 @@
     }
   }
 
+  &:hover {
+    .items__check {
+      margin-right: 0;
+    }
+
+    i {
+      animation: spin-check 1s;
+   
+
+    }
+
+    @keyframes spin-check {
+      0% {
+        transform: rotate(90deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
   &__name {
     @include flexbox(column, normal, center);
     flex: 1;
@@ -143,6 +165,7 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
+      padding-top: 0.8rem;
     }
 
     p {
@@ -151,6 +174,7 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
+      padding-bottom: 0.5rem;
     }
   }
 
@@ -159,11 +183,25 @@
     transform: translateY(11px);
     font-weight: 700;
     padding-left: 1.2rem;
+    padding-right: 1rem;
   }
 
   &__check {
-    display: none;
+    background-color: $check;
+    @include flexbox(row, center, center);
+    height: 65px;
+    width: 3.5rem;
+    border-radius: 0 15px 15px 0;
+    margin-right: -4rem;
+    transition: all 0.4s ease-in-out;
+
+     i {
+    color: white;
+    font-weight: 900;
   }
+  }
+
+ 
 }
 
 .btn__order {
