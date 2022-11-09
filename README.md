@@ -6,7 +6,7 @@ The objective is to integrate and dynamize a web page with CSS animations using 
 
 
 ## Requirement
-node.js version 16.17.1
+node.js version 16.17.1  
 npm version 8.15.0
 
 
