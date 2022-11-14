@@ -41,21 +41,21 @@
 
 @keyframes heart-size {
   0% {
-    transform: translateY(-50%) scale(1);
+    transform: scale(0);
   }
 
   25% {
-    transform: translateY(-50%) scale(0.5);
+    transform: scale(0.5);
   }
 
   50% {
-    transform: translateY(-50%) scale(1);
+    transform: scale(1);
   }
   75% {
-    transform: translateY(-50%) scale(1.5);
+    transform: scale(1.25);
   }
   100% {
-    transform: translateY(-50%) scale(1);
+    transform: scale(1);
   }
 }
 
