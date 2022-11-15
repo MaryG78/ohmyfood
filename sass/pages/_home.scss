@@ -1,4 +1,5 @@
 /* ------------------------------ LOADER ------------------------------ */
+
 .loader {
   background-color: white;
   position: fixed;
@@ -7,9 +8,10 @@
   z-index: 10;
   @include flexbox(row, normal, center);
   opacity: 0.9;
+  
 
   /*ANIMATION */
-  animation: disappear 0.55s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2s forwards;
+  animation: disappear 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2s forwards;
 
   &::after {
     content: "";
