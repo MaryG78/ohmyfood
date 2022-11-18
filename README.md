@@ -21,7 +21,6 @@ https://github.com/MaryG78/ohmyfood.git
 - Install the project with npm
 ```bash
   npm install
-  npm -g install sass
 ```
 
 ## Use
