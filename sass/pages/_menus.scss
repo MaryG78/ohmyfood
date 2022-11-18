@@ -1,3 +1,4 @@
+/* ------------------------------ HEADER ------------------------------ */
 .header--return {
   @include flexbox(row, center, center);
   position: relative;
@@ -11,6 +12,7 @@
   }
 }
 
+/* ------------------------------ MAIN ------------------------------ */
 .menu {
   @include flexbox(column, normal, center);
   position: relative;
@@ -50,7 +52,7 @@
   }
 
   &__title {
-    @include flexbox(row, normal, normal);
+    @include flexbox(row, normal, space-between);
 
     @include media-sm {
       flex-basis: 100%;
@@ -64,13 +66,31 @@
       flex: 1;
     }
 
-    i {
-      padding-right: 1.2rem;
-      font-size: x-large;
-    }
+    .menu__icon {
+      position: relative;
+      i {
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+      }
 
-    .full {
-      display: none;
+      /* Heart animation */
+
+      .full {
+        opacity: 0;
+        background-image: linear-gradient(250deg, $purple, $pink);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(0, 0, 0, 0);
+      }
+
+      &:hover {
+        .full {
+          opacity: 1;
+          animation: heart-size 1s linear;
+        }
+      }
     }
   }
 
@@ -78,6 +98,18 @@
     @include flexbox(column, normal, normal);
     padding-bottom: 2.5rem;
 
+    /* ------------------------------ LAZY LOADING ------------------------------*/
+    @for $j from 1 through 3 {
+      &:nth-of-type(#{$j}) {
+        @for $i from 1 through 4 {
+          .items:nth-of-type(#{$i}) {
+            animation-delay: #{$i * 300 + ($j - 1) * 1200}ms;
+          }
+        }
+      }
+    }
+
+    /* ---------------------------------------------------------------------------*/
     @include media-sm {
       flex-basis: 30%;
     }
@@ -100,125 +132,100 @@
       }
     }
   }
-}
 
-.cards__details {
-  @include flexbox(column, normal, normal);
-  gap: 14px;
-}
-
-.items {
-  @include flexbox(row, center, normal);
-  background-color: white;
-  border-radius: 15px;
-  padding-left: 0.8rem;
-  @include shadow;
-  animation: lazy-loading 1s;
-  animation-fill-mode: both;
-  overflow: hidden;
-
-  @for $i from 1 through 3 {
-    &:nth-child(#{$i}) {
-      animation-delay: 200ms * $i;
-    }
+  .cards__details {
+    @include flexbox(column, normal, normal);
+    gap: 14px;
   }
 
-  @keyframes lazy-loading {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  &:hover {
-    .items__check {
-      margin-right: 0;
-    }
-
-    i {
-      animation: spin-check 1s;
-   
-
-    }
-
-    @keyframes spin-check {
-      0% {
-        transform: rotate(90deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  }
-
-  &__name {
-    @include flexbox(column, normal, center);
-    flex: 1;
+  .items {
+    @include flexbox(row, center, normal);
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 0.8rem;
+    @include shadow;
+    animation: lazy-loading 1050ms ease-out both;
     overflow: hidden;
+    cursor: pointer;
 
-    h4 {
-      padding-bottom: 0.4rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+    /* ------------------------------ CHECK ------------------------------ */
+    &:hover {
+      .items__check {
+        margin-right: 0;
+      }
+
+      i {
+        animation: spin-check 1s;
+      }
+    }
+    /* ------------------------------------------------------------ */
+
+    &__name {
+      @include flexbox(column, normal, center);
+      flex: 1;
       overflow: hidden;
-      padding-top: 0.8rem;
+
+      h4 {
+        padding-bottom: 0.4rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-top: 0.8rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        font-weight: 300;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-bottom: 0.5rem;
+      }
     }
 
-    p {
-      font-size: 0.95rem;
-      font-weight: 300;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      padding-bottom: 0.5rem;
+    &__price {
+      @include flexbox(row, flex-end, flex-end);
+      transform: translateY(11px);
+      font-weight: 700;
+      padding-left: 1.2rem;
+      padding-right: 1rem;
+    }
+
+    &__check {
+      background-color: $check;
+      @include flexbox(row, center, center);
+      height: 65px;
+      width: 3.5rem;
+      border-radius: 0 15px 15px 0;
+      margin-right: -4rem;
+      transition: all 0.4s ease-in-out;
+
+      i {
+        color: white;
+        font-weight: 900;
+        font-size: 1.5rem;
+      }
     }
   }
 
-  &__price {
-    @include flexbox(row, flex-end, flex-end);
-    transform: translateY(11px);
-    font-weight: 700;
-    padding-left: 1.2rem;
-    padding-right: 1rem;
-  }
-
-  &__check {
-    background-color: $check;
+  .btn__order {
     @include flexbox(row, center, center);
-    height: 65px;
-    width: 3.5rem;
-    border-radius: 0 15px 15px 0;
-    margin-right: -4rem;
-    transition: all 0.4s ease-in-out;
+    padding-top: 0.5rem;
+    padding-bottom: 5rem;
 
-     i {
-    color: white;
-    font-weight: 900;
-  }
-  }
+    @include media-sm {
+      flex-basis: 100%;
+    }
 
- 
-}
+    .btn {
+      @include btn-gradient;
+      padding: 1rem 3.2rem;
 
-.btn__order {
-  @include flexbox(row, center, center);
-  padding-top: 0.5rem;
-  padding-bottom: 5rem;
-
-  @include media-sm {
-    flex-basis: 100%;
-  }
-
-  .btn {
-    @include btn-gradient;
-    padding: 1rem 3.2rem;
-
-    &.btn:hover {
-      @include btn-hover;
+      &.btn:hover {
+        @include btn-hover;
+      }
     }
   }
 }
